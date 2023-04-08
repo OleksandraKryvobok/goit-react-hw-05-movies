@@ -32,7 +32,7 @@ const Cast = () => {
         return () => {
             abortControllerCast.abort();
         };
-    }, []);
+    }, [id]);
 
     return (
         <>
