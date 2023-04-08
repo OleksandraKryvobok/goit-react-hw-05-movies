@@ -13,12 +13,12 @@ const Movies = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams();
-
     const location = useLocation();
+    const queryValue = searchParams.get('query');
 
     useEffect(() => {
-        setQueryMovie(searchParams.get('query'));
-    }, [searchParams]);
+        setQueryMovie(queryValue);
+    }, [queryValue]);
 
     useEffect(() => {
         if(!queryMovie) {
@@ -61,7 +61,7 @@ const Movies = () => {
             <SearchBar onFormSubmit={handleSubmit} />
             {!error && <SearchedMovies moviesList={fetchedMovies} location={location} />}
             {loading && <div>Loading...</div>}
-            {error && <div>{error}</div>}
+            {error && queryValue && <div>{error}</div>}
         </>
     );
 };
