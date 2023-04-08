@@ -1,5 +1,5 @@
 import { lazy, useEffect, useState } from "react";
-import { useParams, useRouteError } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { fetchReviews } from "services/movies-api";
 
 const ReviewsList = lazy(() => import('../ReviewsList/ReviewsList'));
