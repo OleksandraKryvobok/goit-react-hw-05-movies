@@ -4,6 +4,8 @@ import { useEffect, useState, lazy } from "react";
 
 const MovieInfo = lazy(() => import("../components/MovieInfo"));
 
+export const abortControllerSearchedMovies = new AbortController();
+
 const MovieDetails = () => {
     const [movie, setMovie] = useState({});
     const [loading, setLoading] = useState(false);
@@ -29,6 +31,10 @@ const MovieDetails = () => {
         };
 
         fetchMovieById();
+
+        return () => {
+            abortControllerSearchedMovies.abort();
+        }
     }, [id]);
 
     return (

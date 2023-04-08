@@ -1,6 +1,7 @@
 import axios from "axios";
 import { abortControllerHome } from "pages/Home";
 import { abortControllerMovies } from "pages/Movies";
+import { abortControllerSearchedMovies } from "pages/MovieDetails";
 import { abortControllerCast } from "components/Cast/Cast";
 import { abortControllerReviews } from "components/Reviews/Reviews";
 
@@ -35,7 +36,7 @@ export async function fetchSearchedMovies(searchValue) {
         params: {
             api_key: API_KEY,
             query: `${searchValue}`,
-            // signal: abortController.signal
+            signal: abortControllerSearchedMovies.signal
         }
     });
 
