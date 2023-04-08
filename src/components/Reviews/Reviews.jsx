@@ -31,7 +31,7 @@ const Reviews = () => {
         return () => {
             abortControllerReviews.abort();
         };
-    }, []);
+    }, [id]);
 
     return (
         <>
