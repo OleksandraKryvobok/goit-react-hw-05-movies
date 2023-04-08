@@ -15,11 +15,10 @@ const Movies = () => {
     const [searchParams, setSearchParams] = useSearchParams();
 
     const location = useLocation();
-    const query = searchParams.get('query');
 
     useEffect(() => {
         setQueryMovie(searchParams.get('query'));
-    }, [query]);
+    }, [searchParams]);
 
     useEffect(() => {
         if(!queryMovie) {
