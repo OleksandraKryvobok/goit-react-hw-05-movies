@@ -36,7 +36,7 @@ const Home = () => {
 
    return (
       <>
-         <h1>Trending today</h1>
+         <h1>Trending today!</h1>
          <TrendingMoviesList trendingMovies={trendingMovies} location={location} />
          {error && <div error={error.message}></div>}
       </>      
